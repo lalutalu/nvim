@@ -11,6 +11,7 @@ vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", opts)
 -- save and quit
 vim.api.nvim_set_keymap("n", "<C-s>", ":w!<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-c>", ":q!<CR>", opts)
+vim.api.nvim_set_keymap('n', '<leader>c', '<Cmd>BufferClose<CR>', opts)
 
 -- moving lines
 vim.api.nvim_set_keymap("n", "<C-A-j>", ":m+<CR>", opts)
@@ -34,3 +35,5 @@ vim.api.nvim_set_keymap('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 vim.api.nvim_set_keymap('n', '<A-S-J>', '<Cmd>BufferMovePrevious<CR>', opts)
 vim.api.nvim_set_keymap('n', '<A-S-K>', '<Cmd>BufferMoveNext<CR>', opts)
+
+vim.api.nvim_set_keymap('n', '<F2>', ':%s///', opts)

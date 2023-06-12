@@ -16,7 +16,7 @@ toggleterm.setup({
 	direction = "float",
 	highlights = {
 	},
-	shell = vim.o.shell,
+	shell = "pwsh.exe -noLog /NoLogo",
 	float_opts = {
 		border = "curved",
 		winblend = 3,
