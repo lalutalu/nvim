@@ -22,6 +22,7 @@ vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeFindFileToggle<CR>", opts)
 
 -- Telescope
 vim.api.nvim_set_keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+vim.api.nvim_set_keymap("n", "gl", ":Telescope diagnostics<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fr", ":Telescope oldfiles<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>bb", ":Telescope buffers<CR>", opts)
 

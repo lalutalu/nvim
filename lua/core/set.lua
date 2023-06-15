@@ -27,3 +27,12 @@ vim.opt.splitright = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
+
+-- line numbers
+vim.opt.relativenumber = true
+vim.opt.number = true
+
+-- autocmd for markdown files
+vim.api.nvim_exec([[
+  autocmd FileType markdown setlocal nonumber norelativenumber
+]], true)
