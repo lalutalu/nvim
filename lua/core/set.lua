@@ -36,3 +36,6 @@ vim.opt.number = true
 vim.api.nvim_exec([[
   autocmd FileType markdown setlocal nonumber norelativenumber
 ]], true)
+
+--autocmd for ejs support
+vim.api.nvim_command('autocmd BufRead,BufNewFile *.ejs setfiletype html')
