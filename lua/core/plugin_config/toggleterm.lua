@@ -19,11 +19,7 @@ toggleterm.setup({
 	shell = "pwsh.exe -noLog /NoLogo",
 	float_opts = {
 		border = "curved",
-		winblend = 3,
-		highlights = {
-			border = "Normal",
-			background = "Normal",
-		},
+		winblend = 0,
 	},
 })
 
