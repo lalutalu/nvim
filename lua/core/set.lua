@@ -13,7 +13,7 @@ vim.opt.smarttab = true
 vim.opt.smartcase = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 vim.opt.shiftwidth = 2
 
 -- mouse

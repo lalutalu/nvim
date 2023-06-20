@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
   }  
   use 'RRethy/nvim-base16'
   use 'Mofiqul/vscode.nvim'
+  use 'xiyaowong/transparent.nvim'
   use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
