@@ -16,7 +16,7 @@ toggleterm.setup({
 	direction = "float",
 	highlights = {
 	},
-	shell = "powershell.exe -noLog /NoLogo",
+	shell = "pwsh.exe -noLog /NoLogo",
 	float_opts = {
 		border = "curved",
 		winblend = 0,
