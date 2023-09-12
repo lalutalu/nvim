@@ -13,16 +13,12 @@ vim.api.nvim_set_keymap("n", "<C-s>", ":w!<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-c>", ":q!<CR>", opts)
 
 -- moving lines
-vim.api.nvim_set_keymap("n", "<A-j>", ":m+<CR>", opts)
-vim.api.nvim_set_keymap("n", "<A-k>", ":m-2<CR>", opts)
+vim.api.nvim_set_keymap("n", "<A-Down>", ":m+<CR>", opts)
+vim.api.nvim_set_keymap("n", "<A-Up>", ":m-2<CR>", opts)
 vim.api.nvim_set_keymap('n', '<leader>c', '<Cmd>tabclose<CR>', opts)
 
--- ToggleTerm
--- vim.api.nvim_set_keymap("n", "<C-z>", ":ToggleTerm<CR>", opts)
-
 -- buffers
-vim.api.nvim_set_keymap("n", "<C-j>", "<Cmd>BufferLineCyclePrev<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-k>", "<Cmd>BufferLineCycleNext<CR>", opts)
-vim.api.nvim_set_keymap('n', '<A-S-J>', '<Cmd>tabm-<CR>', opts)
-vim.api.nvim_set_keymap('n', '<A-S-K>', '<Cmd>tabm+<CR>', opts)
-
+vim.api.nvim_set_keymap("n", "<C-Left>", "<Cmd>tabprevious<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-Right>", "<Cmd>tabnext<CR>", opts)
+vim.api.nvim_set_keymap('n', '<A-S-Left>', '<Cmd>tabm-<CR>', opts)
+vim.api.nvim_set_keymap('n', '<A-S-Right>', '<Cmd>tabm+<CR>', opts)

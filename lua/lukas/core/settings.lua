@@ -31,22 +31,3 @@ vim.opt.ignorecase = true
 -- line numbers
 vim.opt.relativenumber = true
 vim.opt.number = true
-
--- autocmd for markdown files
---vim.api.nvim_exec([[
---  autocmd FileType markdown setlocal nonumber norelativenumber
---]], true)
-
--- autocmd for ejs support
-vim.api.nvim_command('autocmd BufRead,BufNewFile *.ejs setfiletype html')
-
--- vim cursor 
--- vim.opt.guicursor = ""
-
--- Set javascript files to javascript react
-vim.cmd([[
-augroup filetype_jsx
-    autocmd!
-    autocmd FileType javascript set filetype=javascriptreact
-augroup END
-]])

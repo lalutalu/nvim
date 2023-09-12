@@ -1,21 +1,11 @@
 return {
-  'Mofiqul/vscode.nvim',
+  'svrana/neosolarized.nvim',
   priority = 1000,
+  dependencies = 'tjdevries/colorbuddy.nvim',
   config = function()
-     local c = require('vscode.colors').get_colors()
- require('vscode').setup({
-    transparent = false,
-
-    italic_comments = false,
-
-    disable_nvimtree_bg = false,
-
-    color_overrides = {
-    },
-
-    group_overrides = {
-    }
+      require('neosolarized').setup({
+    comment_italics = true,
+    background_set = true,
   })
-require('vscode').load()
- end 
+  end
 }
