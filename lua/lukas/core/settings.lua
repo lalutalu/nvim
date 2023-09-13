@@ -31,3 +31,11 @@ vim.opt.ignorecase = true
 -- line numbers
 vim.opt.relativenumber = true
 vim.opt.number = true
+
+vim.cmd([[
+augroup filetype_jsx
+    autocmd!
+    autocmd FileType javascript set filetype=javascriptreact
+augroup END
+]])
+

@@ -17,7 +17,12 @@ return {
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     vim.opt.runtimepath = vim.opt.runtimepath + '~/AppData/Local/nvim/lua/lukas/snippets'
     require('luasnip/loaders/from_vscode').lazy_load()
-
+    local keymap = vim.api.nvim_set_keymap
+    local opts = { noremap = true, silent = true }
+    keymap("i", "<c-l>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+    keymap("s", "<c-l>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+    keymap("i", "<c-h>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+    keymap("s", "<c-h>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
     cmp.setup({
       completion = {
 	completeopt = "menu,menuone,preview,noselect",
@@ -28,8 +33,8 @@ return {
 	end,
       },
       mapping = cmp.mapping.preset.insert({
-	 ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-	 ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+	["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+	["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
 	["<C-b>"] = cmp.mapping.scroll_docs(-4),
 	["<C-f>"] = cmp.mapping.scroll_docs(4),
 	["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
