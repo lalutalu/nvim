@@ -5,7 +5,20 @@ vim.opt.undofile = false
 vim.opt.writebackup = false
 
 -- clipboard
-vim.opt.clipboard = "unnamedplus"
+vim.cmd([[
+let g:clipboard = {
+  \   'name': 'WslClipboard',
+  \   'copy': {
+  \      '+': 'clip.exe',
+  \      '*': 'clip.exe',
+  \    },
+  \   'paste': {
+  \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  \   },
+  \   'cache_enabled': 0,
+  \ }
+]])
 
 -- visual
 vim.opt.termguicolors = true
@@ -13,7 +26,7 @@ vim.opt.smarttab = true
 vim.opt.smartcase = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
- vim.opt.cursorline = true
+vim.opt.cursorline = true
 vim.opt.shiftwidth = 2
 
 -- mouse
@@ -34,8 +47,8 @@ vim.opt.number = true
 
 vim.cmd([[
 augroup filetype_jsx
-    autocmd!
-    autocmd FileType javascript set filetype=javascriptreact
+autocmd!
+autocmd FileType javascript set filetype=javascriptreact
 augroup END
 ]])
 

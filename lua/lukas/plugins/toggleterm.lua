@@ -25,7 +25,7 @@ return {
     persist_size = true,
     direction = "float",
   highlights = {},
-    shell = 'pwsh.exe -noLog /noLogo',
+    shell = '/usr/bin/bash',
     float_opts = {
       border = "curved",
       winblend = 0,
