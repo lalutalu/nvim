@@ -25,7 +25,7 @@ return {
     persist_size = true,
     direction = "float",
   highlights = {},
-    shell = 'pwsh.exe -NoLog /NoLogo',
+    shell = 'powershell.exe -NoLog /NoLogo',
     float_opts = {
       border = "curved",
       winblend = 0,
