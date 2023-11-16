@@ -12,9 +12,9 @@ return {
   "akinsho/toggleterm.nvim",
   cmd = "ToggleTerm",
   build = ":ToggleTerm",
-  keys = { { "<C-_>", "<cmd>ToggleTerm<cr>" } },
+  keys = { { "<c-z>", "<cmd>ToggleTerm<cr>" } },
   opts = {
-    open_mapping = [[<C-_>]],
+    open_mapping = [[<c-z>]],
     size = 60,
     hide_numbers = true,
     shade_filetypes = {},
@@ -25,7 +25,7 @@ return {
     persist_size = true,
     direction = "float",
   highlights = {},
-    shell = 'powershell.exe -NoLog /NoLogo',
+    shell = 'zsh',
     float_opts = {
       border = "curved",
       winblend = 0,
