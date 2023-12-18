@@ -18,9 +18,9 @@ vim.api.nvim_set_keymap("n", "<A-Up>", ":m-2<CR>", opts)
 vim.api.nvim_set_keymap('n', '<leader>c', '<Cmd>tabclose<CR>', opts)
 
 -- buffers
-vim.api.nvim_set_keymap("n", "<C-j>", "<Cmd>tabprevious<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-k>", "<Cmd>tabnext<CR>", opts)
--- vim.api.nvim_set_keymap("n", "<C-J>", "<Cmd>bn<CR>", opts)
--- vim.api.nvim_set_keymap("n", "<C-K>", "<Cmd>bp<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-J>", "<Cmd>tabprevious<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-K>", "<Cmd>tabnext<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-j>", "<Cmd>BufferLineCycleNext<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-k>", "<Cmd>BufferLineCyclePrev<CR>", opts)
 vim.api.nvim_set_keymap('n', '<C-A-j>', '<cmd>tabm-<cr>', opts)
 vim.api.nvim_set_keymap('n', '<C-A-k>', '<cmd>tabm+<cr>', opts)

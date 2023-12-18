@@ -25,7 +25,7 @@ return {
     persist_size = true,
     direction = "float",
   highlights = {},
-    shell = 'zsh',
+    shell = 'pwsh.exe /NoLog -NoLogo',
     float_opts = {
       border = "curved",
       winblend = 0,
