@@ -85,7 +85,12 @@ return {
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss" },
     })
 
-    lspconfig["bicep"].setup({
+    -- lspconfig["bicep"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    -- })
+
+    lspconfig["pylsp"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
