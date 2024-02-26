@@ -45,6 +45,9 @@ vim.opt.ignorecase = true
 vim.opt.relativenumber = true
 vim.opt.number = true
 
+--guicursor
+-- vim.opt.guicursor = ""
+
 vim.cmd([[
 augroup filetype_jsx
 autocmd!
