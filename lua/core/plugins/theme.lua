@@ -1,5 +1,7 @@
 return {
 	'Mofiqul/vscode.nvim',
+	priority = 1000,
+
 	config = function()
 		local c = require('vscode.colors').get_colors()
 		require('vscode').setup({
@@ -11,9 +13,9 @@ return {
 			underline_links = true,
 
 			-- Disable nvim-tree background color
-			disable_nvimtree_bg = false,
+			disable_nvimtree_bg = true,
 
-			-- Override colors (see ./lua/vscode/colors.lua)
+			-- -- Override colors (see ./lua/vscode/colors.lua)
 			color_overrides = {
 				vscLineNumber = '#FFFFFF',
 			}
