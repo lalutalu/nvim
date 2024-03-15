@@ -10,7 +10,7 @@ vim.opt.relativenumber = true
 
 vim.opt.mouse = "a"
 
--- vim.opt.showmode = false
+vim.opt.showmode = false
 
 vim.opt.backup = false
 vim.opt.writebackup = false
