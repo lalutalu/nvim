@@ -1,26 +1,24 @@
 return {
-	"rose-pine/neovim",
-	name = "rose-pine",
+	'Mofiqul/vscode.nvim',
 	config = function()
-		require("rose-pine").setup({
-			variant = "auto",
-			dark_variant = "main",
-			dim_inactive_windows = false,
-			extend_background_behind_borders = true,
+		local c = require('vscode.colors').get_colors()
+		require('vscode').setup({
+			transparent = false,
+			-- Enable italic comment
+			italic_comments = false,
 
-			enable = {
-				terminal = true,
-				legacy_highlights = true,
-				migrations = true,
-			},
+			-- Underline `@markup.link.*` variants
+			underline_links = true,
 
-			styles = {
-				bold = true,
-				italic = false,
-				transparency = false,
-			},
+			-- Disable nvim-tree background color
+			disable_nvimtree_bg = false,
+
+			-- Override colors (see ./lua/vscode/colors.lua)
+			color_overrides = {
+				vscLineNumber = '#FFFFFF',
+			}
 		})
-
-		vim.cmd("colorscheme rose-pine")
+		require('vscode').load()
 	end
+
 }
