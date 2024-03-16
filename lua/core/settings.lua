@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 vim.g.have_nerd_font = true
 
