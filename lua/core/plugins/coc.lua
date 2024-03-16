@@ -54,17 +54,6 @@ return {
 		})
 
 		local opts = { silent = true, nowait = true }
-		keyset("x", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
-		keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
-
-		keyset("n", "<leader>ac", "<Plug>(coc-codeaction-cursor)", opts)
-		keyset("n", "<leader>as", "<Plug>(coc-codeaction-source)", opts)
 		keyset("n", "<leader>ca", "<Plug>(coc-codeaction)", opts)
-		keyset("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)
-
-		---@diagnostic disable-next-line: redefined-local
-		local opts = { silent = true, nowait = true }
-		keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
-		keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 	end
 }
