@@ -27,8 +27,8 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 vim.opt.inccommand = "split"
 
@@ -86,22 +86,6 @@ require("lazy").setup({
 				changedelete = { text = "~" },
 			},
 		},
-	},
-
-	{
-		"folke/which-key.nvim",
-		event = "VimEnter",
-		config = function()
-			require("which-key").setup()
-
-			require("which-key").register({
-				["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-				["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-				["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-				["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-				["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-			})
-		end,
 	},
 	{
 		"nvim-telescope/telescope.nvim",
@@ -386,8 +370,12 @@ require("lazy").setup({
 			vim.g.loaded_netrw = 1
 			vim.g.loaded_netrwPlugin = 1
 
-			require("nvim-tree").setup()
-			vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+			require("nvim-tree").setup({
+				view = {
+					side = "right",
+				},
+			})
+			vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>")
 		end,
 	},
 
@@ -443,6 +431,62 @@ require("lazy").setup({
 				highlight = { enable = true },
 				indent = { enable = true },
 			})
+		end,
+	},
+	{
+		"akinsho/toggleterm.nvim",
+		cmd = "ToggleTerm",
+		build = ":ToggleTerm",
+		keys = { { "<c-z>", "<cmd>ToggleTerm<cr>" } },
+		opts = {
+			open_mapping = [[<c-z>]],
+			size = 60,
+			hide_numbers = true,
+			shade_filetypes = {},
+			shade_terminals = true,
+			shading_factor = 2,
+			start_in_insert = true,
+			insert_mappings = true,
+			persist_size = true,
+			direction = "float",
+			highlights = {},
+			shell = "pwsh.exe -NoLog /NoLogo",
+			float_opts = {
+				border = "curved",
+				winblend = 0,
+			},
+		},
+	},
+
+	{
+		"akinsho/bufferline.nvim",
+		version = "*",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("bufferline").setup({
+				highlights = {
+					buffer_selected = {
+						italic = false,
+						bold = true,
+					},
+				},
+				options = {
+					indicator = {
+						icon = "",
+						style = "none",
+					},
+					diagnostics = false,
+					show_buffer_close_icons = false,
+					always_show_bufferline = false,
+				},
+			})
+
+			vim.keymap.set("n", "<C-j>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Go to previous buffer" })
+			vim.keymap.set("n", "<C-k>", "<cmd>BufferLineCycleNext<CR>", { desc = "Go to next buffer" })
+			vim.keymap.set("n", "<C-A-j>", "<cmd>BufferLineMovePrev<CR>", { desc = "Cycle buffer order to previous" })
+			vim.keymap.set("n", "<C-A-k>", "<cmd>BufferLineMoveNext<CR>", { desc = "Cycle buffer order to next" })
+			vim.keymap.set("n", "<C-w>", "<cmd>bd!<CR>", { desc = "Delete buffer" })
+			vim.keymap.set("n", "<Space><Space>", "<cmd>BufferLinePick<CR>", { desc = "Pick buffer" })
 		end,
 	},
 }, {
