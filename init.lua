@@ -380,23 +380,29 @@ require("lazy").setup({
 			vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>")
 		end,
 	},
-
 	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
+		"RRethy/base16-nvim",
+		-- lazy=false,
+		-- priority=1000,
 		config = function()
-			require("gruvbox").setup({
-				italic = {
-					strings = false,
-					emphasis = false,
-					comments = false,
-					operators = false,
-					folds = false,
-				},
-			})
+			-- vim.cmd('colorscheme base16-gruvbox-dark-hard')
 
-			vim.cmd.colorscheme("gruvbox")
-		end,
+		end
+	},
+	{
+		"Mofiqul/vscode.nvim",
+		lazy=false,
+		priority=1000,
+		config = function()
+			local c = require('vscode.colors').get_colors()
+			require('vscode').setup({
+				transparent = false,
+				italic_comments = false,
+				underline_links = false,
+				disable_nvimtree_bg = false,
+			})
+			require('vscode').load()
+		end
 	},
 
 	{
