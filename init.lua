@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.g.shiftwidth = 4
 vim.g.have_nerd_font = true
 
 vim.opt.number = true
@@ -213,7 +214,7 @@ require("lazy").setup({
 			local servers = {
 				pyright = {},
 				tsserver = {},
-
+				volar = {},
 				lua_ls = {
 					settings = {
 						Lua = {
@@ -386,23 +387,22 @@ require("lazy").setup({
 		-- priority=1000,
 		config = function()
 			-- vim.cmd('colorscheme base16-gruvbox-dark-hard')
-
-		end
+		end,
 	},
 	{
 		"Mofiqul/vscode.nvim",
-		lazy=false,
-		priority=1000,
+		lazy = false,
+		priority = 1000,
 		config = function()
-			local c = require('vscode.colors').get_colors()
-			require('vscode').setup({
+			local c = require("vscode.colors").get_colors()
+			require("vscode").setup({
 				transparent = false,
 				italic_comments = false,
 				underline_links = false,
 				disable_nvimtree_bg = false,
 			})
-			require('vscode').load()
-		end
+			require("vscode").load()
+		end,
 	},
 
 	{
@@ -434,6 +434,9 @@ require("lazy").setup({
 					"vim",
 					"vimdoc",
 					"python",
+				},
+				autotag = {
+					enable = true,
 				},
 				auto_install = true,
 				highlight = { enable = true },
