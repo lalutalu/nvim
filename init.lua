@@ -383,25 +383,25 @@ require("lazy").setup({
 	},
 	{
 		"RRethy/base16-nvim",
-		-- lazy=false,
-		-- priority=1000,
+		lazy = false,
+		priority = 1000,
 		config = function()
-			-- vim.cmd('colorscheme base16-gruvbox-dark-hard')
+			vim.cmd("colorscheme base16-gruvbox-dark-hard")
 		end,
 	},
 	{
 		"Mofiqul/vscode.nvim",
-		lazy = false,
-		priority = 1000,
+		-- lazy = false,
+		-- priority = 1000,
 		config = function()
-			local c = require("vscode.colors").get_colors()
-			require("vscode").setup({
-				transparent = false,
-				italic_comments = false,
-				underline_links = false,
-				disable_nvimtree_bg = false,
-			})
-			require("vscode").load()
+			-- local c = require("vscode.colors").get_colors()
+			-- require("vscode").setup({
+			-- 	transparent = false,
+			-- 	italic_comments = false,
+			-- 	underline_links = false,
+			-- 	disable_nvimtree_bg = false,
+			-- })
+			-- require("vscode").load()
 		end,
 	},
 
@@ -448,9 +448,9 @@ require("lazy").setup({
 		"akinsho/toggleterm.nvim",
 		cmd = "ToggleTerm",
 		build = ":ToggleTerm",
-		keys = { { "<c-z>", "<cmd>ToggleTerm<cr>" } },
+		keys = { { "<c-_>", "<cmd>ToggleTerm<cr>" } },
 		opts = {
-			open_mapping = [[<c-z>]],
+			open_mapping = [[<c-_>]],
 			size = 60,
 			hide_numbers = true,
 			shade_filetypes = {},
