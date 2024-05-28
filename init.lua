@@ -6,8 +6,16 @@ vim.g.have_nerd_font = true
 
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.termguicolors = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
+
+vim.opt.tabstop = 2
+
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+
+vim.expandtab = true
 
 vim.opt.mouse = "a"
 
@@ -448,9 +456,9 @@ require("lazy").setup({
 		"akinsho/toggleterm.nvim",
 		cmd = "ToggleTerm",
 		build = ":ToggleTerm",
-		keys = { { "<c-_>", "<cmd>ToggleTerm<cr>" } },
+		keys = { { "<c-z>", "<cmd>ToggleTerm<cr>" } },
 		opts = {
-			open_mapping = [[<c-_>]],
+			open_mapping = [[<c-z>]],
 			size = 60,
 			hide_numbers = true,
 			shade_filetypes = {},
