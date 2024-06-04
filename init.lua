@@ -5,7 +5,7 @@ vim.g.shiftwidth = 4
 vim.g.have_nerd_font = true
 
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 
 vim.opt.wrap = true
@@ -67,6 +67,13 @@ vim.keymap.set("n", "<A-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<A-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<A-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<A-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { noremap = true, silent = true })
+vim.keymap.set("i", "<A-Down>", "<Esc>:m .+1<CR>==gi", { noremap = true, silent = true })
+vim.keymap.set("i", "<A-Up>", "<Esc>:m .-2<CR>==gi", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
