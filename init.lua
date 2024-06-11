@@ -398,11 +398,29 @@ require("lazy").setup({
 	},
 	{
 		"RRethy/base16-nvim",
+		-- lazy = false,
+		-- priority = 1000,
+		config = function()
+			-- vim.cmd("colorscheme base16-gruvbox-dark-hard")
+		end,
+	},
+	{
+		"navarasu/onedark.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd("colorscheme base16-gruvbox-dark-hard")
-		end,
+			require('onedark').setup {
+				style = 'deep',
+				code_style = {
+					comments = 'italic',
+					keywords = 'none',
+					functions = 'none',
+					strings = 'none',
+					variables = 'none'
+				},
+			}
+			require('onedark').load()
+		end
 	},
 	{
 		"Mofiqul/vscode.nvim",
