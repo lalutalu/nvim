@@ -5,7 +5,8 @@ return {
         local nvim_web_devicons = require('nvim-web-devicons')
 
         -- Get the Vim icon
-        local vim_icon, vim_icon_hl = nvim_web_devicons.get_icon("vim")
+		local vim_icon, vim_icon_hl = nvim_web_devicons.get_icon("vim")
+		vim_icon_hl = "Green"
 
         -- Mapping of mode letters to full mode names
         local mode_map = {
@@ -57,45 +58,3 @@ return {
         })
     end
 }
--- return {
---     "nvim-lualine/lualine.nvim",
---     dependencies = { "nvim-tree/nvim-web-devicons" },
---     config = function()
---         local nvim_web_devicons = require('nvim-web-devicons')
---
---         -- Get the Vim icon
---         local vim_icon, vim_icon_hl = nvim_web_devicons.get_icon("vim")
---
---         require("lualine").setup({
---             options = {
---                 icons_enabled = true,
---                 theme = "auto",
---             },
---             sections = {
---                 lualine_a = {{
---                     function()
---                         return vim_icon .. ' ' .. vim.fn.mode()
---                     end,
---                 }},
---                 lualine_b = {'branch', 'diff', 'diagnostics'},
---                 lualine_c = {'filename'},
---                 lualine_x = {'filetype'},
---                 lualine_y = {'progress'},
---                 lualine_z = {'location'}
---             },
---             inactive_sections = {
---                 lualine_a = {},
---                 lualine_b = {},
---                 lualine_c = {'filename'},
---                 lualine_x = {'location'},
---                 lualine_y = {},
---                 lualine_z = {}
---             },
---             tabline = {},
---             winbar = {},
---             inactive_winbar = {},
---             extensions = {}
---         })
---     end
--- }
---
