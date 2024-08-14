@@ -1,0 +1,18 @@
+set clipboard=unnamed
+
+set wrap
+
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set cursorline
+
+set scrolloff=10
+
+set hlsearch
+set ignorecase
+set smartcase
+
+" Clear search highlighting with <Esc>
+nnoremap <Esc> :nohlsearch<CR>
