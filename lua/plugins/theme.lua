@@ -17,11 +17,27 @@ return {
 					-- Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
 				}
 			})
-			vim.cmd.colorscheme "vscode"
+			-- vim.cmd.colorscheme "vscode"
 		end
 	},
 	{
-		"ellisonleao/gruvbox.nvim", 
+		"EdenEast/nightfox.nvim",
+		priority = 1000,
+		config = function()
+			require('nightfox').setup({
+				options = {
+					styles = {
+						comments = "italic",
+						keywords = "bold",
+						types = "italic,bold",
+					}
+				}
+			})
+			vim.cmd("colorscheme duskfox")
+		end
+	},
+	{
+		"ellisonleao/gruvbox.nvim",
 		-- priority = 1000 , 
 		config = function()
 			require("gruvbox").setup({
